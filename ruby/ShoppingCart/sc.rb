@@ -2,6 +2,18 @@ class ShoppingCart
 	def initialize
 		@items = []
 	end
+
+	def add_item(item)
+		@items.push(item)
+	end
+
+		def price
+		total_price = 0
+  		@items.each do |item|
+  			total_price += item.price
+  		end
+  		total_price
+	end
 end
 
 class Item
@@ -9,14 +21,6 @@ class Item
 	def initialize(name, price)
 		@name = name
 		@price = price
-	end
-
-	def price
-		total_price = 0
-  		@items.each do |item|
-  			total_price += item.price
-  		end
-  		total_price
 	end
 end
 
@@ -53,4 +57,10 @@ oj = Item.new("Orange Juice", 10)
 rice = Item.new("Rice", 1)
 anchovies = Item.new("Anchovies", 2)
 
-puts bananas.price
+#shopper
+
+vals_cart = ShoppingCart.new
+vals_cart.add_item(oj)
+vals_cart.add_item(rice)
+
+puts vals_cart.price
