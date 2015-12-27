@@ -61,6 +61,6 @@ anchovies = Item.new("Anchovies", 2)
 
 vals_cart = ShoppingCart.new
 vals_cart.add_item(oj)
-vals_cart.add_item(rice)
+vals_cart.add_item(bananas)
 
 puts vals_cart.price
