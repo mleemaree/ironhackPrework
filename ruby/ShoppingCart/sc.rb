@@ -7,10 +7,14 @@ class ShoppingCart
 		@items.push(item)
 	end
 
-		def price
+	def price
 		total_price = 0
   		@items.each do |item|
-  			total_price += item.price
+  			if @items.length <= 5
+  				total_price += item.price
+  			else
+  				total_price += item.price * 0.9
+  			end
   		end
   		total_price
 	end
@@ -60,6 +64,10 @@ anchovies = Item.new("Anchovies", 2)
 #shopper
 
 vals_cart = ShoppingCart.new
+vals_cart.add_item(oj)
+vals_cart.add_item(oj)
+vals_cart.add_item(oj)
+vals_cart.add_item(oj)
 vals_cart.add_item(oj)
 vals_cart.add_item(bananas)
 
