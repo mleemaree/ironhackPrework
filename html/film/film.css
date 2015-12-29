@@ -1,0 +1,39 @@
+article{
+	width: 1000px;
+	height:1000px;
+	margin:auto;
+}
+
+header,footer{
+	height:100px;
+	width:100%;
+	text-align: center;
+}
+
+#foto-wrapper{
+	float:left;
+	width:45%;
+}
+
+img{
+	width:100%;
+}
+
+#summary-wrapper{
+	float:right;
+	width:45%;
+}
+
+#info-wrapper{
+	width:100%;
+	clear:both;
+}
+
+.table-title{
+	font-weight:bold;
+}
+
+#related li{
+	display:inline-block;
+	padding: 0 2%;
+}
