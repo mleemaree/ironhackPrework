@@ -1,4 +1,5 @@
 class App
+	attr_reader :rating
 	def initialize (title, author, platform, rating)
 		@title = title
 		@author = author
@@ -22,7 +23,19 @@ class App
 		puts "#{@author} has developed #{@title} for #{@platform} and he has made a #{rating} application"
 	end
 
+	include Comparable
+	def <=>(other_app)
+		self.rating == other_app.rating
+		if self.rating > other_app.rating
+			puts "#{app} is better than #{other_app}"
+		else
+			puts "#{other_app} is better than #{app}"
+		end
+	end
+
 end
 
 app = App.new "ILoveApples", "Richard Stallman", "iOS", 8 
 app.evaluation
+other_app = App.new "SmashingCandies", "Steve Ballmer", "iOS", 6
+app.comparable other_app
