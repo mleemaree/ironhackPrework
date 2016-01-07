@@ -8,9 +8,10 @@ var read = direc.split('');
 
 
 
-
+//so how am i looking for certain cases and ignoring all other letters?
+// and should i use let?
   function goForward(rover) {
-    for (i=0; i<read.length; i++){
+    for (i of read){
       switch(rover.direction) {
         case 'f':
           rover.position[0]++
@@ -26,6 +27,7 @@ var read = direc.split('');
           break;
       };
 
+  }
     if (rover.position[0] == 10){
       rover.position[0] = 0;
     }
@@ -38,8 +40,6 @@ var read = direc.split('');
     var rl = rover.position[1];
 
     var posi = [fb , rl];
-
-  }
   
 
 }
